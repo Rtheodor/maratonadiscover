@@ -15,38 +15,53 @@
 
     <header>
 
-        <h1 id="logo">Ted.Finance$</h1>
+        <img src="./img/logo.svg" alt="logo DevFinances">
 
     </header>
     <main class="container">
 
         <section id="balance">
-            <h2>Balanço</h2>
+            <h2 class="sr-only">Balanço</h2>
 
             <!--CARDS-->
 
             <div class="card">
-                <h3>Entrada</h3>
+                <h3>
+                    <span>Entranda</span>
+                    <img src="./img/income.svg" alt="Imagem de entradas">
+                </h3>
                 <p>R$ 5.000,00</p>
             </div>
+
             <div class="card">
-                <h3>Saída</h3>
+                <h3>
+                    <span>saída</span>
+                    <img src="./img/expense.svg" alt="Imagem de entradas">
+                </h3>
+                
                 <p>R$ 3.000,00</p>
             </div>
+
             <div class="card total">
-                <h3>Total</h3>
+                <h3>
+                    <span>Total</span>
+                    <img src="./img/total.svg" alt="Imagem de entradas">
+                </h3>
+                
                 <p>R$ 3.000,00</p>
             </div>
 
         </section>
         <section id="transaction">
-            <h2>Transações</h2>
+            <h2 class="sr-only">Transações</h2>
+            <a href="#" class="button new">+ nova transação</a>
             <table id="data-table">
                 <thead>
                     <tr>
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Data</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,18 +69,27 @@
                         <td class="description">Luz</td>
                         <td class="expense">R$ 200,00</td>
                         <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./img/minus.svg" alt="Remover transação">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="description">Criação de Website</td>
                         <td class="income">R$ 5.000,00</td>
                         <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./img/minus.svg" alt="Remover transação">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="description">Internet</td>
                         <td class="expense">R$ 100,00</td>
                         <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./img/minus.svg" alt="Remover transação">
+                        </td>
                     </tr>
                 </tbody>
 
@@ -76,6 +100,65 @@
 
 
     </main>
+<!--Modal-->
+    <div class="modal-overlay active">
+        <div class="modal">
+           
+           <div id="form">
+           
+             <h2>Nova transação</h2>
+           
+            <form action="">
+                <div class="input-group">
+                    <label class="sr-only" for="description">Descrição</label>
+                        <input 
+                        type="text" 
+                        id="description" 
+                        name="description"
+                        
+                        placeholder="Descrição"
+                        />
+                </div>
+
+                <div class="input-group">
+                    <label class="sr-only" for="amount">Valor</label>
+                        <input 
+                        type="number"
+                        step="0.01" 
+                        id="amount" 
+                        name="amount"
+                        
+                        placeholder="0,00"
+                        />
+                        <small class="help">Use o sinal - (negativo) para despesas e , (virgula) para casa decimais </small>
+                    
+                </div>
+
+                <div class="input-group">
+                    <label class="sr-only" for="date">Data</label>
+                        <input 
+                        type="date" 
+                        id="date" 
+                        name="date"
+                        />
+                </div>
+                
+                <div class="input-group actions">
+                <a href="#" class="button cancel">Cancelar</a>
+                    <button>
+                        Salvar
+                    </button>
+                
+
+                </div>
+
+            </form>
+            
+           </div>
+               
+        </div>
+    </div>
+
     <footer>
         <p>Dev.finance$</p>
     </footer>
