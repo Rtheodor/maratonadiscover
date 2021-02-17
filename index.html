@@ -39,7 +39,7 @@
                     <img src="./img/expense.svg" alt="Imagem de entradas">
                 </h3>
                 
-                <p>R$ 3.000,00</p>
+                <p>R$ 2.000,00</p>
             </div>
 
             <div class="card total">
@@ -54,7 +54,9 @@
         </section>
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
-            <a href="#" class="button new">+ nova transação</a>
+            <a href="#" 
+            onclick="Modal.open()"
+            class="button new">+ nova transação</a>
             <table id="data-table">
                 <thead>
                     <tr>
@@ -100,8 +102,10 @@
 
 
     </main>
-<!--Modal-->
-    <div class="modal-overlay active">
+                                        
+                                    <!--Modal-->
+
+    <div class="modal-overlay">
         <div class="modal">
            
            <div id="form">
@@ -144,7 +148,7 @@
                 </div>
                 
                 <div class="input-group actions">
-                <a href="#" class="button cancel">Cancelar</a>
+                <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
                     <button>
                         Salvar
                     </button>
@@ -162,7 +166,23 @@
     <footer>
         <p>Dev.finance$</p>
     </footer>
-
+    <script>
+        Modal= {
+            open(){
+                //Abrir Modal
+                //Adicionar a class active ao modal
+                document.querySelector('.modal-overlay')
+                .classList.add('active')
+            },
+            close(){
+                //Fechar o Modal
+                //Remover a class active do modal
+                document.querySelector('.modal-overlay')
+                .classList.remove('active')
+                
+            }
+        }
+    </script>
 
 
 
