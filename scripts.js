@@ -173,7 +173,7 @@ const App = {
     },
 }
 
-App.init()
+App.init() /*remover aqui*/
 
 transactions.forEach(function(transaction){
     DOM.addTransaction(transaction)
