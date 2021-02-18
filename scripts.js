@@ -20,21 +20,21 @@ const Modal = {
 
 const transactions = [
     {
-        id: 1,
+        
         description: 'luz',
         amount: -50001,
         date: '23/01/2021',
     }
     ,
     {
-        id: 2,
+        
         description: 'website',
         amount: 500000,
         date: '23/01/2021',
     }
     ,
     {
-        id: 3,
+        
         description: 'internet',
         amount: -100,
         date: '23/01/2021',
@@ -42,7 +42,7 @@ const transactions = [
     }
     ,
     {
-        id: 4,
+       
         description: 'app',
         amount: 280000,
         date: '23/01/2021',
@@ -51,10 +51,12 @@ const transactions = [
 ]
 
 const Transaction = {
-    all:transactions,
+    all: transactions,
+
     add(transaction){
         Transaction.all.push(transaction)
-        App.reload()
+
+       App.reload()
     }
     ,
 
@@ -142,7 +144,31 @@ const DOM = {
         document.getElementById('totalDisplay')
         .innerHTML = Utils.formatCurrency ( Transaction.total())
     }
+    ,
+
+    clearTransactions(){
+        DOM.transactionContainer.innerHTML = ""
+    }
 }
+
+
+const App = {
+    init(){
+        Transaction.all.forEach(transaction => {
+            DOM.addTransaction(transaction)
+        })
+        
+        
+        DOM.updateBalance()
+        
+        
+    },
+    reload(){
+        DOM.clearTransactions()
+        App.init()
+    },
+}
+
 
 const Utils = {
     formatCurrency(value){
@@ -158,32 +184,18 @@ const Utils = {
     }
 }
 
-const App = {
-    init(){
-        transactions.all.forEach(transaction => {
-            DOM.addTransaction(transaction)
-        })
-        
-        DOM.updateBalance()
-        
-    },
-    reload(){
-        App.init()
-
-    },
-}
-
-App.init() /*remover aqui*/
-
-transactions.forEach(function(transaction){
-    DOM.addTransaction(transaction)
-})
-
-
+App.init()
 
 Transaction.add({
-    id: 39,
-    description: "Hello",
+    id:39,
+    description: 'ALo',
     amount: 200,
-    date: '23/02/2021'
+    date:20/02/2021
 })
+
+
+
+
+
+
+
